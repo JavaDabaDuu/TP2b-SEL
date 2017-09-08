@@ -3,12 +3,12 @@ TP2 de Clase de Programación Avanzada.
 
 ### Integrantes del equipo
 
-* Dimas Aguirre ([a-dimas](https://github.com/a-dimas))
-* Fabián Norberto Escobar ([FabianNorbertoEscobar](https://github.com/FabianNorbertoEscobar))
-* Maxi Perez Coto ([maxiperezc](https://github.com/maxiperezc))
-* Pablo Lopez ([pabloL0pez](https://github.com/pabloL0pez))
+* Fabián Escobar ([FabianNorbertoEscobar](https://github.com/FabianNorbertoEscobar))
+* Pablo López ([pabloL0pez](https://github.com/pabloL0pez))
+* Micaela Ramos ([RamosMicaela](https://github.com/RamosMicaela))
+* Lucas Secchi ([Secchi1](https://github.com/Secchi1))
 
-## Sobre la tecnología
+# Sobre la tecnología
 
 ### Herramientas utilizadas
 
