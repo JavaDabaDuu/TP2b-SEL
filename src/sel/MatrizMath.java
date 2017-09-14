@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.util.Locale;
 import java.util.Scanner;
 
+import sel.MatrizMath;
+import sel.MatrizMathException;
+
 public class MatrizMath {
 
 	private int filas;
@@ -27,10 +30,15 @@ public class MatrizMath {
 		this.valor[fila][columna] = valor;
 	}
 
-	public MatrizMath(int fila, int columna) {
-		this.filas = fila;
-		this.columnas = columna;
-		valor = new double[fila][columna];
+	public MatrizMath(int filas, int columnas) {
+		this.filas = filas;
+		this.columnas = columnas;
+		valor = new double[filas][columnas];
+	}
+	
+	public MatrizMath(int filas, int columnas, double[][] matriz) {
+		this(filas, columnas);
+		this.valor = matriz.clone();
 	}
 
 	public MatrizMath(String path) {
@@ -282,5 +290,26 @@ public class MatrizMath {
 			}
 			System.out.println();
 		}
+	}
+	
+	public MatrizMath potencia(int exponente) {
+		MatrizMath base = this.clone();
+		if (!this.cuadrada()) {
+			throw new MatrizMathException("La potencia solo se aplica a matrices cuadradas");
+		} else if (exponente == 0) {
+			return MatrizMath.identidad(this.filas);
+		} else if (exponente < 0) {
+			exponente *= -1;
+			for (int i = 0; i < base.getFilas(); i++) {
+				for (int j = 0; j < base.getColumnas(); j++) {
+					base.setValor(i, j, Math.pow(base.getValor(i, j), -1));
+				}
+			}
+		}
+		MatrizMath potencia = base.clone();
+		for (int i = 1; i < exponente; i++) {
+			potencia = potencia.multiplicar(base);
+		}
+		return potencia;
 	}
 }
